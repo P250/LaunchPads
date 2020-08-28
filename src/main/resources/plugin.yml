@@ -1,0 +1,10 @@
+main: io.github.p250.LaunchPadsPlugin
+name: LaunchPads
+version: 1.0
+api-version: 1.12
+
+commands:
+  launchpad:
+    usage: /launchpad
+    description: Gives the player a placeable launch pad.
+    aliases: [lp]
