@@ -3,6 +3,7 @@ package io.github.p250;
 import io.github.p250.command.GiveLaunchPadCommand;
 import io.github.p250.events.LaunchPadBreak;
 import io.github.p250.events.LaunchPadPlace;
+import io.github.p250.events.LaunchPadStep;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -65,6 +66,7 @@ public class LaunchPadsPlugin extends JavaPlugin {
 
         Bukkit.getPluginManager().registerEvents(new LaunchPadBreak(this, getConfigLaunchPadLoc()), this);
         Bukkit.getPluginManager().registerEvents(new LaunchPadPlace(this, getConfigLaunchPadLoc(), getConfigLaunchPadSettings()), this);
+        Bukkit.getPluginManager().registerEvents(new LaunchPadStep(this, getConfigLaunchPadLoc(), getConfigLaunchPadSettings()), this);
     }
 
     public boolean saveConfigs() {

@@ -22,7 +22,7 @@ public class LaunchPadBreak implements Listener {
     }
 
     @EventHandler
-    public void onBreak(BlockBreakEvent e) {
+    public void onPadBreak(BlockBreakEvent e) {
         Block block = e.getBlock();
         ArrayList<String> stringLocations = (ArrayList<String>) launchPadsLoc.getStringList("locations");
 

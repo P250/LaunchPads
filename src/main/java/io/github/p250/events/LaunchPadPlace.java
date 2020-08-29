@@ -25,16 +25,16 @@ public class LaunchPadPlace implements Listener {
     }
 
     @EventHandler
-    public void onBlockPlace(BlockPlaceEvent e) {
+    public void onPadPlace(BlockPlaceEvent e) {
         Block block = e.getBlock();
 
         String name = e.getItemInHand().getItemMeta().getDisplayName();
-        UtilClass.log("name: " + name);
         String launchPadName = UtilClass.cc(launchPadsSettings.getString("launchpads.pad.name"));
 
-        if (!(name.equals(launchPadName))) {
+        if ( name == null || !(name.equals(launchPadName)) ) {
             return;
         }
+
         String locString = UtilClass.serializeLocation(block.getLocation());
         ArrayList<String> locations = (ArrayList<String>) launchPadsLoc.getStringList("locations");
 
